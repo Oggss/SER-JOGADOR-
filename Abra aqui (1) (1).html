@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bora Jogar Pebolim</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+            animation: fadeIn 2s ease;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #007bff;
+            transition: transform 0.5s;
+        }
+        h1:hover {
+            transform: scale(1.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .error-message {
+            color: red;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .show {
+            opacity: 1;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h1>BORA JOGAR PEBOLIM</h1>
+        <button onclick="mostrarErro()">Jogar</button>
+        <p id="erro" class="error-message">ERRO, somente homens conseguem jogar</p>
+    </div>
+
+    <script>
+        function mostrarErro() {
+            document.getElementById('erro').classList.add('show');
+        }
+    </script>
+
+</body>
+</html>
